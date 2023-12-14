@@ -1,24 +1,23 @@
 #include "monty.h"
+
 /**
- * add_node - add node to the head stack
- * @head: head of the stack
- * @n: new_value
- * Return: no return
-*/
-void add_node(stack_t **head, int n)
+ * add_stck - Adds a node to the stack.
+ * @new_node: Pointer to the new node.
+ * @linenum: Interger representing the line number of of the opcode.
+ */
+void add_stck(stack_t **new_node, __attribute__((unused))unsigned int linenum)
 {
+	stack_t *tmp;
 
-	stack_t *new_node, *connect;
-
-	connect = *head;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{ printf("Error\n");
-		exit(0); }
-	if (connect)
-		connect->prev = new_node;
-	new_node->n = n;
-	new_node->next = *head;
-	new_node->prev = NULL;
-	*head = new_node;
+	if (new_node == NULL || *new_node == NULL)
+		exit(EXIT_FAILURE);
+	if (head == NULL)
+	{
+		head = *new_node;
+		return;
+	}
+	tmp = head;
+	head = *new_node;
+	head->next = tmp;
+	tmp->prev = head;
 }

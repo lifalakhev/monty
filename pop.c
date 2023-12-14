@@ -1,24 +1,20 @@
 #include "monty.h"
 
 /**
- * lv_pop - prints the top.
- * @head: stack head
- * @line_number: line number
- * Return: no return
-*/
-void lv_pop(stack_t **head, unsigned int line_number)
+ * pop_t - Adds a node to the stack.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @line_number: Interger representing the line number of of the opcode.
+ */
+void pop_t(stack_t **stack, unsigned int line_number)
 {
-	stack_t *h;
+	stack_t *tmp;
 
-	if (*head == NULL)
-	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	h = *head;
-	*head = h->next;
-	free(h);
+	if (stack == NULL || *stack == NULL)
+		era(7, line_number);
+
+	tmp = *stack;
+	*stack = tmp->next;
+	if (*stack != NULL)
+		(*stack)->prev = NULL;
+	free(tmp);
 }

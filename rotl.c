@@ -1,27 +1,24 @@
 #include "monty.h"
 
 /**
- * lv_rotl- rotates the stack to the top
- * @head: stack head
- * @line_number: line number
- * Return: no return
+ * rotl - Rotates the first node of the stack to the bottom.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @linenum: Interger representing the line number of of the opcode.
  */
-void lv_rotl(stack_t **head,  __attribute__((unused)) unsigned int line_number)
+void rotl(stack_t **stack, __attribute__((unused))unsigned int linenum)
 {
-	stack_t *tmp = *head, *connect;
+	stack_t *tmp;
 
-	if (*head == NULL || (*head)->next == NULL)
-	{
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 		return;
-	}
-	connect = (*head)->next;
-	connect->prev = NULL;
+	tmp = *stack;
+
 	while (tmp->next != NULL)
-	{
 		tmp = tmp->next;
-	}
-	tmp->next = *head;
-	(*head)->next = NULL;
-	(*head)->prev = tmp;
-	(*head) = connect;
+
+	tmp->next = *stack;
+	(*stack)->prev = tmp;
+	*stack = (*stack)->next;
+	(*stack)->prev->next = NULL;
+	(*stack)->prev = NULL;
 }

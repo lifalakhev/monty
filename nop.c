@@ -1,13 +1,12 @@
 #include "monty.h"
 
 /**
- * nop - nothing.
- * @head: stack head
- * @line_number: line number.
- * Return: no return
+ * nop - Does nothing.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @line_number: Interger representing the line number of of the opcode.
  */
-void nop(stack_t **head, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
-	(void) line_number;
-	(void) head;
+	(void)stack;
+	(void)line_number;
 }

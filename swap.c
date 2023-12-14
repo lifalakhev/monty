@@ -1,32 +1,22 @@
 #include "monty.h"
 
 /**
- * lv_swap - adds the top two elements of the stack.
- * @head: stack head
- * @line_number: line number
- * Return: no return
+ * nodes_swap - Swaps the top two elements of the stack.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @line_number: Interger representing the line number of of the opcode.
  */
-void lv_swap(stack_t **head, unsigned int line_number)
+void nodes_swap(stack_t **stack, unsigned int line_number)
 {
-	stack_t *h;
-	int len = 0, connect;
+	stack_t *tmp;
 
-	h = *head;
-	while (h)
-	{
-		h = h->next;
-		len++;
-	}
-	if (len < 2)
-	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	h = *head;
-	connect = h->n;
-	h->n = h->next->n;
-	h->next->n = connect;
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		era(8, line_number, "swap");
+	tmp = (*stack)->next;
+	(*stack)->next = tmp->next;
+	if (tmp->next != NULL)
+		tmp->next->prev = *stack;
+	tmp->next = *stack;
+	(*stack)->prev = tmp;
+	tmp->prev = NULL;
+	*stack = tmp;
 }

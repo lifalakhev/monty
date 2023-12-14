@@ -1,25 +1,29 @@
 #include "monty.h"
 
 /**
- * lv_pstr - prints the string starting at the top of the stack followed by new
- * @head: stack head
- * @line_number: line number
- * Return: no return
-*/
-void lv_pstr(stack_t **head, unsigned int line_number)
+ * pstr - Prints a string.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @linenum: Interger representing the line number of of the opcode.
+ */
+void pstr(stack_t **stack, __attribute__((unused))unsigned int linenum)
 {
-	stack_t *h;
-	(void)line_number;
+	int ascii;
+	stack_t *tmp;
 
-	h = *head;
-	while (h)
+	if (stack == NULL || *stack == NULL)
 	{
-		if (h->n > 127 || h->n <= 0)
-		{
+		printf("\n");
+		return;
+        }
+	tmp = *stack;
+
+	while (tmp != NULL)
+	{
+		ascii = tmp->n;
+		if (ascii <= 0 || ascii > 127)
 			break;
-		}
-		printf("%c", h->n);
-		h = h->next;
+		printf("%c", ascii);
+		tmp = tmp->next;
 	}
 	printf("\n");
 }

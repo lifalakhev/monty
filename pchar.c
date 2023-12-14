@@ -1,31 +1,19 @@
 #include "monty.h"
 
 /**
- * lv_pchar - prints the char at the top of the stack followed by a new line.
- * @head: stack head
- * @line_number: line number
- * Return: no return
-*/
-void lv_pchar(stack_t **head, unsigned int line_number)
+ * pchar - Prints the Ascii value.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @line_number: Interger representing the line number of of the opcode.
+ */
+void pchar(stack_t **stack, unsigned int line_number)
 {
-	stack_t *h;
+	int characters;
 
-	h = *head;
-	if (!h)
-	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	if (h->n > 127 || h->n < 0)
-	{
-		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	printf("%c\n", h->n);
+	if (stack == NULL || *stack == NULL)
+		strerr(11, line_number);
+	characters = (*stack)->n;
+
+	if (characters < 0 || characters > 127)
+		strerr(10, line_number);
+	printf("%c\n", characters);
 }

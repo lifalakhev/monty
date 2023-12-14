@@ -1,30 +1,19 @@
 #include "monty.h"
 
 /**
- * lv_sub- stration
- * @head: stack head
- * @line_number: line number
- * Return: no return
+ * nodes_sub - Adds the top two elements of the stack.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @line_number: Interger representing the line number of of the opcode.
  */
-void lv_sub(stack_t **head, unsigned int line_number)
+void nodes_sub(stack_t **stack, unsigned int line_number)
 {
-	stack_t *connect;
-	int s, nodes;
+	int sum;
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		era(8, line_number, "sub");
 
-	connect = *head;
-	for (nodes = 0; connect != NULL; nodes++)
-		connect = connect->next;
-	if (nodes < 2)
-	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	connect = *head;
-	s = connect->next->n - connect->n;
-	connect->next->n = s;
-	*head = connect->next;
-	free(connect);
+	(*stack) = (*stack)->next;
+	sum = (*stack)->n - (*stack)->prev->n;
+	(*stack)->n = sum;
+	free((*stack)->prev);
+	(*stack)->prev = NULL;
 }

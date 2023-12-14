@@ -1,20 +1,13 @@
 #include "monty.h"
 
 /**
- * lv_pint - prints the top
- * @head: stack head
- * @line_number: line number
- * Return: no return.
-*/
-void lv_pint(stack_t **head, unsigned int line_number)
+ * pint_top - Prints the top node of the stack.
+ * @stack: Pointer to a pointer pointing to top node of the stack.
+ * @line_number: Interger representing the line number of of the opcode.
+ */
+void pint_top(stack_t **stack, unsigned int line_number)
 {
-	if (*head == NULL)
-	{
-		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*head);
-		exit(EXIT_FAILURE);
-	}
-	printf("%d\n", (*head)->n);
+	if (stack == NULL || *stack == NULL)
+		era(6, line_number);
+	printf("%d\n", (*stack)->n);
 }
