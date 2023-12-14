@@ -1,10 +1,11 @@
 #include "monty.h"
 
 /**
- * mod - computes the rest of the division of the second
- * top element of the stack by the top element of the stack
+ * mod - computes the rest of the lv_division of the second top element of
+ * the stack by the top element of the stack.
  * @head: stack head
- * @line_number: line_number
+ * @line_number: line_number.
+ *
  * Return: no return
 */
 void mod(stack_t **head, unsigned int line_number)

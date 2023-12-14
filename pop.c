@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
- * pop - prints the top.
+ * lv_pop - prints the top.
  * @head: stack head
- * @line_number: line_number
+ * @line_number: line number
  * Return: no return
 */
-void pop(stack_t **head, unsigned int line_number)
+void lv_pop(stack_t **head, unsigned int line_number)
 {
 	stack_t *h;
 

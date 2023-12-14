@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
- * add - adds the top two elements of the stack.
+ * lv_add - adds the top two elements of the stack.
  * @head: stack head
  * @line_number: line_number
  * Return: no return
 */
-void add(stack_t **head, unsigned int line_number)
+void lv_add(stack_t **head, unsigned int line_number)
 {
 	stack_t *h;
 	int len = 0, connect;

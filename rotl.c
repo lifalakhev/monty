@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
-  *rotl- rotates the stack to the top
-  *@head: stack head
-  *@line_number: line_number
-  *Return: no return
+ * lv_rotl- rotates the stack to the top
+ * @head: stack head
+ * @line_number: line number
+ * Return: no return
  */
-void rotl(stack_t **head,  __attribute__((unused)) unsigned int line_number)
+void lv_rotl(stack_t **head,  __attribute__((unused)) unsigned int line_number)
 {
 	stack_t *tmp = *head, *connect;
 

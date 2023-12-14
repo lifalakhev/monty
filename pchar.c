@@ -1,13 +1,12 @@
 #include "monty.h"
 
 /**
- * pchar - prints the char at the top of the stack
- * followed by a new line
+ * lv_pchar - prints the char at the top of the stack followed by a new line.
  * @head: stack head
- * @line_number: line_number
+ * @line_number: line number
  * Return: no return
 */
-void pchar(stack_t **head, unsigned int line_number)
+void lv_pchar(stack_t **head, unsigned int line_number)
 {
 	stack_t *h;
 

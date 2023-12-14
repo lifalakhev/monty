@@ -1,30 +1,32 @@
 #include "monty.h"
+
 /**
-* execute - executes the opcode
+* execute - executes the opcode.
 * @stack: head linked list - stack
-* @line_number: line_line_number
-* @file: poiner to monty file
+* @line_number: line number
+* @file: poiner to monty file.
 * @content: line content
-* Return: no return
+* Return: no return.
 */
 int execute(char *content, stack_t **stack, unsigned int line_number, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", push}, {"pall", pall}, {"pint", pint},
-				{"pop", pop},
-				{"swap", swap},
-				{"add", add},
-				{"nop", nop},
-				{"sub", sub},
-				{"div", div},
-				{"mul", mul},
-				{"mod", mod},
-				{"pchar", pchar},
-				{"pstr", pstr},
-				{"rotl", rotl},
-				{"rotr", rotr},
-				{"queue", queue},
-				{"stack", stack},
+				{"push", lv_push}, {"pall",lv_pall},
+				{"pint",lv_pint},
+				{"pop", lv_pop},
+				{"swap", lv_swap},
+				{"add", lv_add},
+				{"nop", lv_nop},
+				{"sub", lv_sub},
+				{"div", lv_div},
+				{"mul", lv_mul},
+				{"mod", lv_mod},
+				{"pchar", lv_pchar},
+				{"pstr", lv_pstr},
+				{"rotl", lv_rotl},
+				{"rotr", lv_rotr},
+				{"queue", lv_queue},
+				{"stack", lv_stack},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;

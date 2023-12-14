@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
- * swap - adds the top two elements of the stack.
+ * lv_swap - adds the top two elements of the stack.
  * @head: stack head
- * @line_number: line_number
+ * @line_number: line number
  * Return: no return
-*/
-void swap(stack_t **head, unsigned int line_number)
+ */
+void lv_swap(stack_t **head, unsigned int line_number)
 {
 	stack_t *h;
 	int len = 0, connect;

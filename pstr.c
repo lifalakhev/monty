@@ -1,12 +1,12 @@
 #include "monty.h"
+
 /**
- * pstr - prints the string starting at the top of the stack,
- * followed by a new
+ * lv_pstr - prints the string starting at the top of the stack followed by new
  * @head: stack head
- * @line_number: line_number
+ * @line_number: line number
  * Return: no return
 */
-void pstr(stack_t **head, unsigned int line_number)
+void lv_pstr(stack_t **head, unsigned int line_number)
 {
 	stack_t *h;
 	(void)line_number;

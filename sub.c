@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
-  *sub- stration
-  *@head: stack head
-  *@line_number: line_number
-  *Return: no return
+ * lv_sub- stration
+ * @head: stack head
+ * @line_number: line number
+ * Return: no return
  */
-void sub(stack_t **head, unsigned int line_number)
+void lv_sub(stack_t **head, unsigned int line_number)
 {
 	stack_t *connect;
 	int s, nodes;
