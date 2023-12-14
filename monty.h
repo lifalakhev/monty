@@ -76,4 +76,4 @@ void era(int error_code, ...);
 void strerr(int error_code, ...);
 void rotr(stack_t **, unsigned int);
 
-#endif
+#endif /* END_MONTY_H */

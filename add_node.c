@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * add_stck - Adds a node to the stack.
+ * add_stck - function that adds a node to the stack.
  * @new_node: Pointer to the new node.
- * @linenum: Interger representing the line number of of the opcode.
+ * @linenum: Integer representing the line number of of the opcode.
  */
 void add_stck(stack_t **new_node, __attribute__((unused))unsigned int linenum)
 {

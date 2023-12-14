@@ -2,8 +2,9 @@
 
 /**
  * main - entry point.
- * @argc: arguments count
- * @argv: list of arguments
+ * @argc: argument count
+ * @argv: argument vector
+ *
  * Return: always 0.
  */
 

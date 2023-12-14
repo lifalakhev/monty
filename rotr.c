@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * rotr - Rotates the last node of the stack to the top.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @linenum: Interger representing the line number of of the opcode.
+ * rotr - Function that rotates the last node of the stack to the top.
+ * @stack: Pointer to a pointer pointing top node of the stack.
+ * @linenum: Integer representing the line number of of the opcode.
  */
 void rotr(stack_t **stack, __attribute__((unused))unsigned int linenum)
 {

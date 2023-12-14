@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * add_que - Adds a node to the queue.
+ * add_que - function that adds a node to the queue.
  * @new_node: Pointer to the new node.
  * @linenum: line number of the opcode.
  */

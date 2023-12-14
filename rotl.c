@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * rotl - Rotates the first node of the stack to the bottom.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @linenum: Interger representing the line number of of the opcode.
+ * rotl - Function that rotates the first node of the stack to the bottom.
+ * @stack: Pointer to a pointer pointing top node of the stack.
+ * @linenum: Integer representing the line number of of the opcode.
  */
 void rotl(stack_t **stack, __attribute__((unused))unsigned int linenum)
 {

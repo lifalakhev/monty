@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * f_open - opens a file
- * @file_name: the file namepath
- * Return: void
+ * f_open - Function that opens a file.
+ * @file_name: the file name
+ * Return: void.
  */
 
 void f_open(char *file_name)
@@ -19,9 +19,9 @@ void f_open(char *file_name)
 
 
 /**
- * read_f - reads a file
- * @fd: pointer to file descriptor
- * Return: void
+ * read_f - Function that reads a file.
+ * @fd: pointer to file descriptor.
+ * Return: void.
  */
 
 void read_f(FILE *fd)
@@ -39,13 +39,13 @@ void read_f(FILE *fd)
 
 
 /**
- * par_line - Separates each line into tokens to determine
- * which function to call
- * @buffer: line from the file
- * @line_number: line number
- * @format:  storage format. If 0 Nodes will be entered as a stack.
+ * par_line - Function that separates each line into tokens to determine
+ * which function to call.
+ * @buffer: line from the file.
+ * @line_number: integer representing line number
+ * @format:  storage format. If 0 Nodes will be entered as a stack,
  * if 1 nodes will be entered as a queue.
- * Return: Returns 0 if the opcode is stack. 1 if queue.
+ * Return: returns 0 if the opcode is stack. 1 if queue.
  */
 
 int par_line(char *buffer, int line_number, int format)
@@ -71,12 +71,12 @@ int par_line(char *buffer, int line_number, int format)
 }
 
 /**
- * find_fun - find the appropriate function for the opcode
- * @opcode: opcode
- * @value: argument of opcode
+ * find_fun - Function that find the appropriate function for the opcode.
+ * @opcode: opcode.
+ * @value: argument of opcode.
  * @format:  storage format. If 0 Nodes will be entered as a stack.
- * @linenum: line number
- * if 1 nodes will be entered as a queue.
+ * @linenum: line number.
+ *
  * Return: void
  */
 void find_fun(char *opcode, char *value, int linenum, int format)
@@ -120,13 +120,13 @@ void find_fun(char *opcode, char *value, int linenum, int format)
 
 
 /**
- * get_fun - Calls the required function.
- * @func: Pointer to the function that is about to be called.
+ * get_fun - Function that calls the required function.
+ * @func: Pointer to the function that is to be called.
  * @op: string representing the opcode.
  * @value: string representing a numeric value.
- * @linenum: line numeber for the instruction.
- * @format: Format specifier. If 0 Nodes will be entered as a stack.
- * if 1 nodes will be entered as a queue.
+ * @linenum: integer line numeber for the instruction.
+ * @format: Format specifier, if 0 Nodes will be entered as a stack.
+ * If 1 nodes will be entered as a queue.
  */
 void get_fun(op_func func, char *op, char *value, int linenum, int format)
 {

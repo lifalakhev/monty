@@ -1,9 +1,11 @@
 #include "monty.h"
 stack_t *head = NULL;
+
 /**
- * create_node - Creates a node.
- * @n: Number to go inside the node.
- * Return: Upon sucess a pointer to the node. Otherwise NULL.
+ * create_node - Function that creates a node.
+ * @n: Number to go into the node.
+ *
+ * Return: Pointer to the node. Otherwise NULL.
  */
 stack_t *create_node(int n)
 {
@@ -20,7 +22,7 @@ stack_t *create_node(int n)
 }
 
 /**
- * free_nodes - Frees nodes in the stack.
+ * free_nodes - Function that frees nodes in the stack.
  */
 void free_nodes(void)
 {

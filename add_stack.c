@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * pstck - Adds a node to the stack.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @line_number: line number of  the opcode.
+ * pstck - function that adds a node to the stack.
+ * @stack: Pointer to a pointer pointing top node of the stack.
+ * @line_number: integer representing line number of  the opcode.
  */
 void pstck(stack_t **stack, unsigned int line_number)
 {

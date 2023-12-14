@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * err - Prints appropiate error messages determined by their error code.
+ * err - Function that prints error messages determined by their error code.
  * @error_code: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
@@ -47,7 +47,7 @@ void err(int error_code, ...)
 }
 
 /**
- * era - handles errors.
+ * era - Function that handles errors.
  * @error_code: The error codes are the following:
  * (6) => When the stack it empty for pint.
  * (7) => When the stack it empty for pop.
@@ -88,7 +88,7 @@ void era(int error_code, ...)
 }
 
 /**
- * strerr - handles errors.
+ * strerr - Function that handles errors.
  * @error_code: The error codes are the following:
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.

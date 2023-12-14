@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * pstr - Prints a string.
- * @stack: Pointer to a pointer pointing to top node of the stack.
- * @linenum: Interger representing the line number of of the opcode.
+ * pstr - Function that prints a string.
+ * @stack: Pointer to a pointer pointing top node of the stack.
+ * @linenum: Integer representing the line number of of the opcode.
  */
 void pstr(stack_t **stack, __attribute__((unused))unsigned int linenum)
 {
-	int ascii;
+	int characters;
 	stack_t *tmp;
 
 	if (stack == NULL || *stack == NULL)
@@ -19,10 +19,10 @@ void pstr(stack_t **stack, __attribute__((unused))unsigned int linenum)
 
 	while (tmp != NULL)
 	{
-		ascii = tmp->n;
-		if (ascii <= 0 || ascii > 127)
+		characters = tmp->n;
+		if (characters <= 0 || characters > 127)
 			break;
-		printf("%c", ascii);
+		printf("%c", characters);
 		tmp = tmp->next;
 	}
 	printf("\n");
